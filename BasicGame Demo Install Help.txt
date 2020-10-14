@@ -1,0 +1,87 @@
+Environment Setup Instructions
+==============================
+Basic Game (Windows x86 version)
+Robert Dmytruk October 12, 2020
+-------------------------------
+
+SET TO x86 TARGET ARCHITECTURE
+
+External Libraries required:
+glew-1.13.0 (https://sourceforge.net/projects/glew/files/glew/1.13.0/)
+glm-0.9.9.8 (https://github.com/g-truc/glm/releases/tag/0.9.9.8)
+
+Solution Layout
+---------------
+BasicGame (Solution directory)
+	- BasicGame (Project directory)
+	- lib
+		- glew-1.13.0			
+		- glm-0.9.9.8
+Library Manual Installation
+--------------------
+Extract files into the lib folder inside the Solution Directory
+If you put the files elsewhere, you need to update the project properties accordingly in MSVC
+
+Additional Instructions
+-----------------------
+1) x86 target platform (windows 32 bit)
+2) glew32.dll is needed in our output folder after compilation. It is found in glew-1.13.0/bin/Release/Win32
+   you can drag also it into the BasicGame project or put it with all the other .h and .cpp files and it will be copied via build event.
+   Added a post build event to move it if layed out properly in above solution hierarchy.
+3) All *.vert and *.frag are required in output folder after compilation.
+   this is carried out by post build event
+
+
+Basic Game Property Pages (MSVC)
+================================
+Here are the list of changes from default for a working project.
+You can tweak as needed.
+Right-click project, select properties.
+
+General
+-------
+Windows SDK Version 8.1
+Platform Toolset Visual Studio 2017 (v141)
+Configuration Type: Application (.exe)
+Character Set: Use Unicode Character Set
+
+C++ General
+-----------
+Additional Include Directories:$(SolutionDir)\lib\glm-0.9.9.8;$(SolutionDIr)\lib\glew-1.13.0\include;%(AdditionalIncludeDirectories)
+Warning Level: Level 2/W2
+SDL checks: Yes /sdl
+
+C++ Optimization
+----------------
+Optimization: Disabled
+
+C++ Preprocessor
+----------------
+Preprocessor Definitions:_CRT_SECURE_NO_WARNINGS;_WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)
+
+C++ Code Generation
+-------------------
+Runtime Library: Multi-threaded Debug (/MTd)
+
+C++ Language
+------------
+Conformance mode: No
+
+C++ Command Line
+----------------
+Additional Options:/Zc:__cplusplus
+
+Linker General
+--------------
+Additional Library Directories:$(SolutionDir)lib\glew-1.13.0\lib\Release\Win32;$(SolutionDir)lib\glew-1.13.0\bin\Release\Win32;%(AdditionalLibraryDirectories)
+
+Linker Input
+------------
+Additional Dependencies:glew32.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)
+
+Build Events - Post Build Event
+-------------------------------
+xcopy /y /d "$(LocalDebuggerWorkingDirectory)*.dll" "$(OutDir)"
+xcopy /y /d "$(SolutionDir)lib\glew-1.13.0\bin\Release\Win32\*.dll" "$(OutDir)"
+xcopy /y /d "$(LocalDebuggerWorkingDirectory)*.vert" "$(OutDir)"
+xcopy /y /d "$(LocalDebuggerWorkingDirectory)*.frag" "$(OutDir)"
