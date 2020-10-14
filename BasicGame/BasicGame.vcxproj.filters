@@ -16,6 +16,9 @@
     <Filter Include="Resource Files\Shaders">
       <UniqueIdentifier>{9b762b4c-0f9c-4986-9aaf-f5d74056b09e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Notes">
+      <UniqueIdentifier>{5071bdad-6cb5-4652-a89c-00dc47db92f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -181,5 +184,10 @@
     <None Include="VPNC_Player.frag">
       <Filter>Resource Files\Shaders</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\BasicGame Demo Install Help.txt">
+      <Filter>Notes</Filter>
+    </Text>
   </ItemGroup>
 </Project>

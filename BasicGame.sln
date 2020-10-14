@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BasicGame", "BasicGame\BasicGame.vcxproj", "{BFACBB4E-C2EA-4465-BF3A-EB2BD086B741}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F362355-78BE-4743-80F1-43C3FB2906AC}"
+	ProjectSection(SolutionItems) = preProject
+		BasicGame Demo Install Help.txt = BasicGame Demo Install Help.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{E5DDA761-3E19-41EA-B96E-B199403E9BB9}"
 EndProject

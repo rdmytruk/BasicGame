@@ -196,6 +196,9 @@ xcopy /y /d "$(LocalDebuggerWorkingDirectory)*.frag" "$(OutDir)"</Command>
     <None Include="VPNC.vert" />
     <None Include="VPNC_Player.frag" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\BasicGame Demo Install Help.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
