@@ -47,7 +47,7 @@ Character Set: Use Unicode Character Set
 
 C++ General
 -----------
-Additional Include Directories:$(SolutionDir)\lib\glm-0.9.9.8;$(SolutionDIr)\lib\glew-1.13.0\include;%(AdditionalIncludeDirectories)
+Additional Include Directories:$(SolutionDir)\lib\glm-0.9.9.8;$(SolutionDir)\lib\glew-1.13.0\include;%(AdditionalIncludeDirectories)
 Warning Level: Level 2/W2
 SDL checks: Yes /sdl
 
